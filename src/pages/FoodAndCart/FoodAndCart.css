@@ -4,3 +4,10 @@
 .right-fAc{
     flex: 1;
 }
+
+
+@media screen and (max-width: 768px)
+{
+    .left-fAc {flex: 1;}
+    .right-fAc {flex: 1;}
+}
