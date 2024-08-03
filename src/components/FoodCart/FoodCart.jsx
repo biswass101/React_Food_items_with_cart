@@ -12,7 +12,7 @@ const FoodCart = ({ value}) => {
     <div className="food-cart-container flex flex-col gap-8 max-w-[17rem] mx-auto">
       <div className="img-and-addTc-container w-full min-h-[12rem] min-w-[12rem] relative">
         <img
-          className="w-full h-full rounded-xl"
+          className={`w-full h-full ${(cartItems[value.id] && cartItems[value.id] >= 1 ? 'rounded-xl border-[2.5px] border-orange-600' : '')}`}
           src={value.image.desktop}
           alt=""
         />
@@ -50,9 +50,6 @@ const FoodCart = ({ value}) => {
             if(!cartItems[!value.id]) {
               setCartItems((prev) => ({...prev, [value.id] : 1}))
             }
-            // else {
-            //   setCartItems((prev) => ({...prev, [value.id] : prev[value.id] + 1}))
-            // }
           }} className=" add-to-c-btn absolute  bottom-[-7%] mr-3 xl:mr-0 left-[23%] xl:left-[20%] flex gap-1 border border-gray-600 bg-white py-1 px-4 xl:py-2 xl:px-6 rounded-3xl">
             <img className="min-w-4" src={addToCartIcon} alt="" />
             <p>Add to cart</p>
