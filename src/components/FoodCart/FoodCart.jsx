@@ -17,7 +17,7 @@ const FoodCart = ({ value}) => {
           alt=""
         />
 
-        {(isQuantityChaning && cartItems[value.id] !== 0) ? (
+        {(cartItems[value.id] !== 0 && isQuantityChaning ) ? (
           <div className="add-to-c-btn absolute  bottom-[-7%] mr-3 xl:mr-0 left-[23%] xl:left-[20%] flex justify-center items-center gap-7 border border-none bg-orange-700 text-white py-1 px-4 xl:py-2 xl:px-6 rounded-3xl">
             <img
               onClick={() => {
