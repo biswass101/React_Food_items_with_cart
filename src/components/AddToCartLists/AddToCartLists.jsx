@@ -166,6 +166,7 @@ const AddToCartLists = () => {
                     <button onClick={() => {
                       setShowConfirmOrder(false)
                       setCartItems({})
+                      location.reload()
                     }} className="font-semibold text-white">
                       Start New Order
                     </button>

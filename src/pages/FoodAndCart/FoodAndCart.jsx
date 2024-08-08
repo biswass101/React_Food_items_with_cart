@@ -4,7 +4,7 @@ import FoodList from "../../components/FoodList/FoodList";
 import AddToCartLists from "../../components/AddToCartLists/AddToCartLists";
 const FoodAndCart = () => {
   return (
-    <div className="food-and-cart flex flex-col justify-center items-center md:items-start md:flex-row p-1 md:p-10 gap-6 md:gap-2">
+    <div className="food-and-cart flex flex-col justify-center items-center md:items-start md:flex-row p-1 md:p-10 gap-6 md:gap-2 max-w-[1500px] mx-auto">
       <div className="left-fAc flex flex-col gap-4">
         <div className="food-category-tile font-bold text-4xl">Desserts</div>
         <div className="food-list-container">
