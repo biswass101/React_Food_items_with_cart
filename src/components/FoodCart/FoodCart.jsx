@@ -1,14 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./FoodCart.css";
 import plusIcon from "../../assets/images/icon-increment-quantity.svg";
 import minusIcon from "../../assets/images/icon-decrement-quantity.svg";
 import addToCartIcon from "../../assets/images/icon-add-to-cart.svg";
 import { CartContext } from "../../Context/CartContext";
 const FoodCart = ({ value}) => {
-  const [isQuantityChaning, setIsQuantityChanging] = useState(false);
   const {cartItems, setCartItems} = useContext(CartContext)
+  const [isQuantityChaning, setIsQuantityChanging] = useState(false);
   const [itemQuantity, setItemQuantity] = useState(0);
   return (
+    
     <div className="food-cart-container flex flex-col gap-8 max-w-[17rem] mx-auto">
       <div className="img-and-addTc-container w-full min-h-[12rem] min-w-[12rem] relative">
         <img
@@ -27,6 +28,7 @@ const FoodCart = ({ value}) => {
                 {
                   setCartItems((prev) => ({...prev, [value.id] : prev[value.id] - 1}))
                 }
+                else setIsQuantityChanging(false)
               }}
               className="border border-white rounded-full py-2 px-1 cursor-pointer"
               src={minusIcon}
@@ -46,8 +48,8 @@ const FoodCart = ({ value}) => {
           <button onClick={() => {
             // debugger
             setIsQuantityChanging(true)
-            setItemQuantity(itemQuantity + 1)
-            if(!cartItems[!value.id]) {
+            // setItemQuantity(itemQuantity + 1)
+            if(!cartItems[value.id]) {
               setCartItems((prev) => ({...prev, [value.id] : 1}))
             }
           }} className=" add-to-c-btn absolute  bottom-[-7%] mr-3 xl:mr-0 left-[23%] xl:left-[20%] flex gap-1 border border-gray-600 bg-white py-1 px-4 xl:py-2 xl:px-6 rounded-3xl">
